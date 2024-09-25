@@ -10,10 +10,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to sentry-nx!</title>
       </Head>
       <main className="app">
-        <Sentry.ErrorBoundary
-          fallback={<div> Some error happened </div>}
-          showDialog
-        >
+        <Sentry.ErrorBoundary showDialog>
           <Component {...pageProps} />
         </Sentry.ErrorBoundary>
       </main>
