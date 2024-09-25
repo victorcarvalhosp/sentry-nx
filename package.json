@@ -2,7 +2,9 @@
   "name": "@sentry-nx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx reset && nx build sentry-nx"
+  },
   "private": true,
   "dependencies": {
     "@sentry/nextjs": "^8.32.0",
