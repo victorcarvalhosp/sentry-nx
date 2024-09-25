@@ -69,20 +69,23 @@ const sentryPlugin = (/** @type {any} */ passedConfig) =>
  */
 const plugins = [
   // Add more Next.js plugins to this list if needed.
-  withNx,
-  sentryPlugin,
+  // withNx,
+  // sentryPlugin,
 ];
 
-module.exports = composePlugins(...plugins)(nextConfig);
+// module.exports = composePlugins(...plugins)(nextConfig);
 
-// module.exports = async (
-//   /** @type {string} */ phase,
-//   /** @type {any} */ context
-// ) => {
-//   let updatedConfig = plugins.reduce((acc, fn) => fn(acc), nextConfig);
+module.exports = async (
+  /** @type {string} */ phase,
+  /** @type {any} */ context
+) => {
+  let updatedConfig = plugins.reduce((acc, fn) => fn(acc), nextConfig);
 
-//   updatedConfig = await withNx(updatedConfig)(phase, context);
-//   updatedConfig = withSentryConfig(updatedConfig);
+  updatedConfig = await withNx(updatedConfig)(phase, context);
+  updatedConfig = withSentryConfig(updatedConfig, {
+    widenClientFileUpload: true,
+    hideSourceMaps: true,
+  });
 
-//   return updatedConfig;
-// };
+  return updatedConfig;
+};
