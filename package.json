@@ -7,7 +7,7 @@
   },
   "private": true,
   "dependencies": {
-    "@sentry/nextjs": "^8.32.0",
+    "@sentry/nextjs": "^7.114.0",
     "next": "14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
