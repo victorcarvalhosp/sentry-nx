@@ -17,6 +17,7 @@ const nextConfig = {
     instrumentationHook: true,
   },
   pageExtensions: ['page.tsx', 'page.ts', 'api.tsx', 'api.ts'],
+  distDir: 'dist',
 };
 
 const sentryPlugin = (/** @type {any} */ passedConfig) =>
