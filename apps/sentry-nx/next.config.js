@@ -17,7 +17,7 @@ const nextConfig = {
     instrumentationHook: true,
   },
   pageExtensions: ['page.tsx', 'page.ts', 'api.tsx', 'api.ts'],
-  distDir: 'dist',
+  // distDir: 'dist',
   sentry: {
     // This will be true by default on Sentry 8.0 so meanwhile we need to force its usage
     hideSourceMaps: true,
